@@ -22,7 +22,7 @@ export default {
     getPosts: function () {
       axios
         .get(
-          "https://d20haber.com//wp-json/wp/v2/posts?categories=14&per_page=4&_JSONP"
+          "https://d20haber.com//wp-json/wp/v2/posts?categories=14&per_page=4&_JSONP=callback"
         )
         .then((response) => (this.data = response.data))
         .catch(function (error) {

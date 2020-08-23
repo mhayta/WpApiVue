@@ -29,7 +29,7 @@ export default {
         .get(
           "https://d20haber.com/wp-json/wp/v2/posts?slug=" +
             this.$route.params.slug +
-            "&_JSONP"
+            "&_JSONP=callback"
         )
         .then((response) => (this.data = response.data[0]))
         .then((data) => {
@@ -37,7 +37,7 @@ export default {
             .get(
               "https://d20haber.com/wp-json/wp/v2/tags?post=" +
                 data.id +
-                "&_JSONP"
+                "&_JSONP=callback"
             )
             .then((data) => (this.tags = data.data));
         })

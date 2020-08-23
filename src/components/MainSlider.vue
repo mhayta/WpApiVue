@@ -24,7 +24,7 @@ export default {
     getPosts: function () {
       axios
         .get(
-          "https://d20haber.com//wp-json/wp/v2/posts?meta_key=wpcf-anasayfa-konumu&meta_value=alt-banner&per_page=11&_JSONP"
+          "https://d20haber.com//wp-json/wp/v2/posts?meta_key=wpcf-anasayfa-konumu&meta_value=alt-banner&per_page=11&_JSONP=callback"
         )
         .then((response) => (this.data = response.data))
         .catch(function (error) {
