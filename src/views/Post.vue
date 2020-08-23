@@ -27,7 +27,7 @@ export default {
     getPost: function () {
       axios
         .get(
-          "http://d20haber.com/wp-json/wp/v2/posts?slug=" +
+          "https://d20haber.com/wp-json/wp/v2/posts?slug=" +
             this.$route.params.slug +
             "&_JSONP"
         )
@@ -35,7 +35,7 @@ export default {
         .then((data) => {
           axios
             .get(
-              "http://d20haber.com/wp-json/wp/v2/tags?post=" +
+              "https://d20haber.com/wp-json/wp/v2/tags?post=" +
                 data.id +
                 "&_JSONP"
             )

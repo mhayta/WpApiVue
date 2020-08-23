@@ -21,7 +21,7 @@ export default {
   methods: {
     getPosts: function () {
       axios
-        .get("http://d20haber.com/wp-json/wp/v2/posts/?_JSONP")
+        .get("https://d20haber.com/wp-json/wp/v2/posts?_JSONP")
         // .get("http://d20haber.comwp-json/wp/v2/posts?slug=post-slug&_JSONP")
         // .get('http://d20haber.com/wp-json/wp/v2/categories/?_JSONP&orderby=id' })
         // .get('https://cors-anywhere.herokuapp.com/'+'http://d20haber.com/wp-json/wp/v2/categories')
