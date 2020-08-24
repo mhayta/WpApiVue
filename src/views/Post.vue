@@ -15,6 +15,7 @@
 
 <script>
 import axios from "axios";
+import { config } from "../config";
 
 export default {
   data() {
@@ -27,18 +28,16 @@ export default {
     getPost: function () {
       axios
         .get(
-          "https://d20haber.com/wp-json/wp/v2/posts?slug=" +
+          config.url +
+            "posts?slug=" +
             this.$route.params.slug +
-            "&_JSONP=callback"
+            "&" +
+            config.callback
         )
         .then((response) => (this.data = response.data[0]))
         .then((data) => {
           axios
-            .get(
-              "https://d20haber.com/wp-json/wp/v2/tags?post=" +
-                data.id +
-                "&_JSONP=callback"
-            )
+            .get(config.url + "tags?post=" + data.id + "&" + config.callback)
             .then((data) => (this.tags = data.data));
         })
         .catch(function (error) {

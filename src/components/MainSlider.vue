@@ -6,6 +6,7 @@
           v-for="(slide, i) in data"
           :key="i"
           :src="slide['post-meta-fields']['wpcf-alt-banner-gorsel'][0]"
+          :to="{ name: 'post', params: { slug : slide.slug } }"
         ></v-carousel-item>
       </v-carousel>
     </v-col>
@@ -24,6 +25,7 @@
 
 <script>
 import axios from "axios";
+import { config } from "../config";
 
 export default {
   data() {
@@ -35,7 +37,7 @@ export default {
     getPosts: function () {
       axios
         .get(
-          "https://d20haber.com//wp-json/wp/v2/posts?meta_key=wpcf-anasayfa-konumu&meta_value=alt-banner&per_page=11&_JSONP=callback"
+          config.url +"posts?meta_key=wpcf-anasayfa-konumu&meta_value=alt-banner&per_page=11&"+ config.callback
         )
         .then((response) => (this.data = response.data))
         .catch(function (error) {
