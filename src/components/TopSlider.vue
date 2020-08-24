@@ -1,13 +1,10 @@
 <template>
   <v-carousel cycle height="auto" hide-delimiter-background show-arrows-on-hover>
-    <v-carousel-item v-for="(slide, i) in data" :key="i">
-        <v-img :src="slide['post-meta-fields']['wpcf-ust-banner-gorsel'][0]"></v-img>
-      <!-- <v-sheet height="100%">
-        <v-row class="fill-height" align="center" justify="center">
-          <div class="display-3">{{ slide['post-meta-fields']['wpcf-ust-banner-gorsel'][0] }}</div>
-        </v-row>
-      </v-sheet> -->
-    </v-carousel-item>
+    <v-carousel-item
+      v-for="(slide, i) in data"
+      :key="i"
+      :src="slide['post-meta-fields']['wpcf-ust-banner-gorsel'][0]"
+    ></v-carousel-item>
   </v-carousel>
 </template>
 

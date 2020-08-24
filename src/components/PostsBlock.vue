@@ -1,7 +1,7 @@
 <template>
 <v-row>
     <v-col cols="12">ASAYİŞ</v-col>
-    <v-col cols="3" v-for="post in data" :key="post.id">
+    <v-col cols="6" md="3" v-for="post in data" :key="post.id">
         <v-img :src="post.featured_img_url"></v-img>
         <p v-html="post.title.rendered"></p>
     </v-col>
