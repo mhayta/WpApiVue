@@ -2,7 +2,7 @@
   <v-main>
     <TopSlider />
     <MainSlider />
-    <PostsBlock />
+    <PostsBlock v-for="blockId in blockIds" :key="blockId" :blockId="blockId" />
   </v-main>
 </template>
 
@@ -19,6 +19,16 @@ export default {
     PostsBlock
   },
 
-  data: () => ({})
+  data: () => ({
+    blockIds : [14,15,22],
+  })
 };
 </script>
+
+<style>
+.redline {
+  padding-right: 5px;
+  border-left: 5px solid #ee6e73;
+  padding-left: 5px;
+}
+</style>

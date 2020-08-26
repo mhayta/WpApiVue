@@ -1,10 +1,10 @@
 <template>
   <v-row>
-    <v-col cols="9" class="mt-16">
+    <v-col cols="12" md="9" class="mt-16">
       <h1 v-html="data.title.rendered" />
       <span>{{ data['post-meta-fields']['wpcf-haber-kaynagi'][0] }} - {{data.date}}</span>
-      <img :src="data.featured_img_url" />
-      <blockquote class="blockquote" v-html="data.excerpt.rendered"></blockquote>
+      <v-img :src="data.featured_img_url"></v-img>
+      <blockquote class="blockquote redline" v-html="data.excerpt.rendered"></blockquote>
       <p v-html="data.content.rendered"></p>
       <div>
         <v-chip v-for="tag in tags" :key="tag.id" color="blue-grey" small>{{ tag.name }}</v-chip>
@@ -50,3 +50,10 @@ export default {
   },
 };
 </script>
+
+<style>
+img.size-full {
+  width: 100%;
+  height: auto;
+}
+</style>
