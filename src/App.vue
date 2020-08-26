@@ -60,4 +60,7 @@ export default {
   max-width: 980px;
   margin: 0 auto;
 }
+.v-application a {
+  text-decoration: none;
+}
 </style>
